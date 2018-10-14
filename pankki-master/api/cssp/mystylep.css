@@ -1,0 +1,90 @@
+html,
+		body {
+			height: 100%;
+			width: 100%;
+		}
+#header{
+  background-color: purple;
+	width: 100%;
+	height: 80px;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	}
+#otsikko{
+	font-size: 27;
+}
+#Uloskirjautuminen{
+	float: right;
+
+}
+#Ulos{
+	float: center;
+	text-align: center;
+
+}
+#menu{
+	float: left;
+	height: 100%;
+	width: 160px;
+}
+
+#content{
+	margin-left: 180px;
+}
+
+#Tilinakyma{
+
+	height: 100%;
+	width: 60%;
+	margin-left: 160px;
+	margin-top: 0%;
+
+}
+#Kortit{
+
+	height: 100%;
+	width: 60%;
+	margin-left: 160px;
+	margin-top: 0%;
+}
+
+#Dropdown{
+
+	width: 60%;
+	margin-left: 160px;
+	margin-top: 0%;
+
+}
+#Lomake{
+	height: 100%;
+	width: 60%;
+	margin-left: 160px;
+	margin-top: 0%;
+	border-radius: 5px;
+}
+
+#E-laskut{
+	height: 100%;
+	width: 60%;
+	margin-left: 160px;
+	margin-top: 0%;
+	border-radius: 5px;
+}
+#Sii{
+	height: 100%;
+	width: 60%;
+	margin-left: 160px;
+	margin-top: 0%;
+	border-radius: 5px;
+
+}
+#Ok{
+	float: right;
+}
+#Korttidropdown{
+	height: 100%;
+	width: 60%;
+	margin-left: 160px;
+	margin-top: 0%;
+}

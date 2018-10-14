@@ -1,0 +1,63 @@
+
+<div class="container" id="Tilinakyma">
+    <p>
+      <?php
+      	require "connection.php";
+      	$sql = "SELECT Tilin_nimi, Tilinumero, Saldo FROM Tili";
+
+      	$resultObject = $db->query($sql);
+
+      	$resultArray = $resultObject->fetchAll(PDO::FETCH_ASSOC);
+
+      	echo json_encode($resultArray);
+      ?>
+        <div id="results"></div>
+
+    </p>
+  </div>
+
+<div class="container" id="Kortit">
+      <p>
+        <?php
+        	require "connection.php";
+        	$sql = "SELECT Kortin_nimi, Kortinnumero, Kayttovara FROM Kortti";
+
+        	$resultObject = $db->query($sql);
+
+        	$resultArray = $resultObject->fetchAll(PDO::FETCH_ASSOC);
+
+        	echo json_encode($resultArray);
+        ?>
+          <div id="results"></div>
+
+      </p>
+    </div>
+
+
+
+
+
+    <div id="results"></div>
+  </div>
+  <div id="Dropdown">
+
+  	<div class="form-group col-md-4">
+  		<label for="inputTili">Valitse Tili</label>
+  		<select id="inputTili" class="form-control">
+  			<option selected>Kayttotili   FI20457800003658      +562,35€</option>
+  			<option>Etutili    FI97648500007896       +6600,00€</option>
+  			<option>Saastotili    FI56792500003698      +10654,00€</option>
+  		</select>
+  	</div>
+    <?php
+    	require "connection.php";
+    	$id=$_GET['id'];
+
+    	$stmt=$db->prepare("SELECT Pvm, Saaja_maksaja, Maara FROM Tili join Tilitapahtumat on Tilitapahtumat.Tili_idTili = Tili.idTili WHERE idTili = 1");
+    	$stmt->bindParam(':id',$id);
+    	$stmt->execute();
+    	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    	echo json_encode($result);
+
+    	?>
